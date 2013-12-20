@@ -1,0 +1,15 @@
+<%= link_to 'Enter Tickets', new_ticket_path %>
+<h1>Listing tickets</h1>
+ 
+<table>
+  <tr>
+    <th>name</th>
+  </tr>
+ 
+  <% @tickets.each do |ticket| %>
+    <tr>
+      <td><%= ticket.id %></td>
+      <td><%= ticket.name %></td>
+    </tr>
+  <% end %>
+</table>

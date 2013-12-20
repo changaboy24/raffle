@@ -1,0 +1,13 @@
+<h1> new raffle ticket </h1>
+<%= form_for :ticket, url: tickets_path do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+<%= link_to 'Home', tickets_path %>
