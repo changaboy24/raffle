@@ -6,7 +6,7 @@ Raffle::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
    
-  resources :tickets
+  resources :tickets, :person
   root to: "welcome#index"
     
   # Example of regular route:
