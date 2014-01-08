@@ -10,6 +10,8 @@
     <tr>
       <td><%= ticket.id %></td>
       <td><%= ticket.name %></td>
+      <td><%= link_to 'Show', ticket %></td>
+      <td><%= link_to 'Edit', edit_ticket_path(ticket) %></td>
     </tr>
   <% end %>
 </table>

@@ -1,5 +1,6 @@
 class TicketsController < ApplicationController
 	def new
+		@ticket = Ticket.new
 	end
 
 	def index
@@ -8,8 +9,25 @@ class TicketsController < ApplicationController
 
 	def create
 		@ticket = Ticket.new(post_params)
-		@ticket.save
-		redirect_to @ticket
+		if @ticket.save
+		  redirect_to @ticket
+		else
+			render 'new'
+		end
+	end
+
+	def edit
+		@ticket = Ticket.find(params[:id])
+	end
+	
+	def update
+		@ticket = Ticket.find(params[:id])
+		if params.has_key?(:ticket)
+			@ticket.update(params[:ticket].permit(:name))
+    		redirect_to @ticket
+	  	else
+	    	render 'edit'
+	  	end
 	end
 
 	def show
