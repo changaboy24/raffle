@@ -1,28 +1,5 @@
-<%= form_for :ticket, url: ticket_path(@ticket), method: :patch do |f| %>
+<h1> Edit ticket </h1>
   
-  <% if @ticket.errors.any? %>
-  <div id="error_explanation">
-    <ul>
-    <% @ticket.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-  <% end %>
-
-  <p>
-    <strong>Current Name:</strong>
-    <%= @ticket.name %>
-  </p>
-
-  <p>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </p>
-
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<%= render 'form' %>
  
 <%= link_to 'Back', tickets_path %>
