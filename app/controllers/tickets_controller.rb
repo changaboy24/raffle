@@ -19,7 +19,7 @@ class TicketsController < ApplicationController
 	def edit
 		@ticket = Ticket.find(params[:id])
 	end
-	
+
 	def update
 		@ticket = Ticket.find(params[:id])
 		if params.has_key?(:ticket)
@@ -32,6 +32,13 @@ class TicketsController < ApplicationController
 
 	def show
 		@ticket = Ticket.find(params[:id])
+	end
+
+	def destroy
+		@ticket = Ticket.find(params[:id])
+		@ticket.destroy
+
+		redirect_to tickets_path
 	end
 
 	private
